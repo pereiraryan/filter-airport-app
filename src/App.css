@@ -1,38 +1,208 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*APP CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
+
+body {
+    background-color: #f4f4f4;
+}
+
 .App {
-  text-align: center;
+    min-height: 100vh;
+    padding: 40px;
+    background: #fff;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 3.6rem;
+    letter-spacing: 1px
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 span {
+    color: #e0e0e0;
 }
 
-.App-link {
-  color: #61dafb;
+.header svg {
+    font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter  {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0 30px;
+    align-items: center;
+}
+
+.filter ul {
+    display: flex;
+}
+
+.filter h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+
+.filter li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin-left: 3vw;
+    font-weight: 400;
+}
+
+.filter li:first-child {
+    margin-left: 0;
+}
+
+.filter label {
+    display: flex;
+    align-items: center;
+}
+
+.filterByType input {
+    margin-right: 7px;
+    opacity: 0;
+}
+
+.filterByType label {
+    position: relative;
+}
+
+.filterByType .checkIcon {
+    position: absolute;
+    left: 0;
+    display: flex;
+}
+
+.filterByType .checkIcon svg {
+    font-size: 1.2rem;
+}
+
+.filterByType {
+    width: 65%;
+}
+
+.filterBySearch {
+    width: 35%;
+}
+
+.searchBox input {
+    border: 0;
+    border-bottom: 2px solid #000;
+    width: 100%;
+    font-size: 18px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.searchBox input:focus {
+    outline: 0;
+}
+
+table {
+    width: 100%;
+}
+
+
+table td,
+table th {
+    text-align: left;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+table th {
+    font-weight: 600;
+    background: #e7e7e7;
+}
+
+.greyBg td {
+    background: #f4f4f4;
+}
+
+.count span {
+    font-weight: 600;
+}
+
+.count p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.pagination svg {
+    font-size: 1.4rem;
 }
