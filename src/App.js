@@ -110,12 +110,13 @@ if ('caches' in window) {
 
 
   render() {
+    const {searchTerm, activeFilters, currentPage, displayData} = this.state;
     return (
       <div className="App">
         <Header />
-        <Filter onChange={this.handleChange} searchTerm={this.state.searchTerm} activeFilters={this.state.activeFilters} />
-        <AirportList displayData={this.state.displayData} currentPage={this.state.currentPage}  handleClick={this.handleClick}/>
-        <Pagination  displayData={this.state.displayData} handleClick={this.handleNavigation} currentPage={this.state.currentPage} />
+        <Filter onChange={this.handleChange} searchTerm={searchTerm} activeFilters={activeFilters} />
+        <AirportList displayData={displayData} currentPage={currentPage}  handleClick={this.handleClick}/>
+        <Pagination  displayData={displayData} handleClick={this.handleNavigation} currentPage={currentPage} />
       </div>
     );
   }
