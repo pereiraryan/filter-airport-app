@@ -14,21 +14,23 @@ function AirportList({displayData, currentPage}) {
               <th>Type</th>
             </tr>
           </thead>
-          {
-             displayData.slice(startWindow, endWindow).map(airport => (
-              <tbody key={airport.id}>
-                <tr>
-                  <td>{airport.name}</td>
-                  <td>{airport.icao}</td>
-                  <td>{airport.iata}</td>
-                  <td>{airport.elevation}</td>
-                  <td>{airport.latitude}</td>
-                  <td>{airport.longitude}</td>
-                  <td>{airport.type}</td>
-                </tr>
-              </tbody>
-            ))
-          }
+            <tbody >
+            {
+              displayData.slice(startWindow, endWindow).map(airport => (
+              
+                  <tr key={airport.id}>
+                    <td>{airport.name}</td>
+                    <td>{airport.icao}</td>
+                    <td>{airport.iata}</td>
+                    <td>{airport.elevation}</td>
+                    <td>{airport.latitude}</td>
+                    <td>{airport.longitude}</td>
+                    <td>{airport.type}</td>
+                  </tr>
+                
+              ))
+            }
+          </tbody>
         </table>
         
           </div>) : (<p className="noResults"> No Airport as per your filter</p> );

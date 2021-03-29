@@ -189,6 +189,9 @@ table th {
     background: #e7e7e7;
 }
 
+tbody tr:nth-child(odd){
+    background-color: #f4f4f4;
+  }
 .greyBg td {
     background: #f4f4f4;
 }
