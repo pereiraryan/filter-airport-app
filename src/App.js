@@ -12,8 +12,7 @@ class App extends React.Component {
     displayData: [],
     activeFilters: [],
     searchTerm: "",
-    currentPage: 1,
-    listWindow: 4
+    currentPage: 1
   }
 
 
@@ -69,7 +68,7 @@ if ('caches' in window) {
   handleChange = (e) => {
 
     const {type, name, value, checked} =  e.target;
-    const { rawData, displayData, activeFilters, searchTerm} = this.state;
+    const { rawData, activeFilters, searchTerm} = this.state;
 
     this.setState({currentPage: 1});
 
@@ -115,7 +114,7 @@ if ('caches' in window) {
       <div className="App">
         <Header />
         <Filter onChange={this.handleChange} searchTerm={this.state.searchTerm} activeFilters={this.state.activeFilters} />
-        <AirportList displayData={this.state.displayData} currentPage={this.state.currentPage} />
+        <AirportList displayData={this.state.displayData} currentPage={this.state.currentPage}  handleClick={this.handleClick}/>
         <Pagination  displayData={this.state.displayData} handleClick={this.handleNavigation} currentPage={this.state.currentPage} />
       </div>
     );

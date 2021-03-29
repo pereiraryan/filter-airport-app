@@ -31,7 +31,7 @@ function AirportList({displayData, currentPage}) {
           }
         </table>
         
-          </div>) : (<p> No Airport as per your filter</p> );
+          </div>) : (<p className="noResults"> No Airport as per your filter</p> );
 }
   
 export default AirportList;
