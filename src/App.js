@@ -51,7 +51,14 @@ class App extends React.Component {
       searchTerm: searchInput
     })
   }
-
+  handleNavigation = (action) => {
+    const {displayData, currentPage} = this.state;
+    if(action === "prev" && currentPage > 1) {
+      this.setState({ currentPage: this.state.currentPage - 1 })
+    } else if(action === "next" && displayData.length / 4 > currentPage ) {
+      this.setState({ currentPage: this.state.currentPage + 1 });
+    }
+  }
 
 
   render() {
@@ -59,8 +66,8 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Filter onChange={this.handleChange} />
-        <AirportList displayData={this.state.displayData} />
-        <Pagination  displayData={this.state.displayData} />
+        <AirportList displayData={this.state.displayData} currentPage={this.state.currentPage} />
+        <Pagination  displayData={this.state.displayData} handleClick={this.handleNavigation} currentPage={this.state.currentPage} />
       </div>
     );
   }
