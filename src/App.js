@@ -21,9 +21,8 @@ class App extends React.Component {
       if(keys.includes("airportdata")) {
         console.log("from cache");
         caches.open('airportdata').then(cache => {
-          cache.match('data/airports.json').then(res => {
-            return res.json()
-          }).then(res => {
+          cache.match('data/airports.json').then(res => res.json())
+          .then(res => {
             if(res.length > 0) {
               this.setState({
                 rawData: res,
