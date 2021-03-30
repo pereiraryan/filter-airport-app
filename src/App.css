@@ -93,7 +93,7 @@ h1 span {
 .filter  {
     display: flex;
     justify-content: space-between;
-    padding: 70px 0 30px;
+    padding: 60px 0 30px;
     align-items: center;
 }
 
@@ -268,7 +268,8 @@ tbody tr:nth-child(odd){
 
     table td, table th {
         font-size: 0.9rem;
-        width: 150px;
+        width: 200px;
+        padding: 18px;
     }
 
     .filterByType {
