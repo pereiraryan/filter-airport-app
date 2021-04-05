@@ -19,15 +19,10 @@ class App extends React.Component {
   componentDidMount() {
     caches.keys().then(keys => {
       if(keys.includes("airportdata")) {
-        console.log("from cache");
         caches.open('airportdata').then(cache => {
           cache.match('data/airports.json').then(res => res.json())
           .then(res => {
-            if(res.length > 0) {
-              this.setState({
-                rawData: res,
-                displayData: res,
-              }, () => {
+            if(res.length > 0) { this.setState({ rawData: res, displayData: res,}, () => {
                 this.setState({
                   activeFilters:  JSON.parse(window.localStorage.getItem("checkboxFilters")) || [],
                   searchTerm: window.localStorage.getItem("searchInput") || "",
@@ -38,7 +33,6 @@ class App extends React.Component {
           })
       })
     } else {
-          console.log("from network");
           fetch("data/airports.json")
           .then( resp => resp.json())
           .then( resp => this.setState({
